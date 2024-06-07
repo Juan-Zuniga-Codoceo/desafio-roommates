@@ -34,8 +34,8 @@ Crea un archivo .env en la raíz del proyecto y añade las siguientes variables:
 
 env
 
-EMAIL_USER=your-email@gmail.com
-EMAIL_PASS=your-email-password
+    * EMAIL_USER=your-email@gmail.com
+    * EMAIL_PASS=your-email-password
 
 ## Uso
 Inicia el servidor:
@@ -48,15 +48,15 @@ npm start
 
 3. Usa las siguientes rutas para interactuar con la API:
 
-GET /roommates: Devuelve todos los roommates almacenados.
-POST /roommates: Agrega un nuevo roommate utilizando la API de Random User.
-GET /gastos: Devuelve el historial de gastos registrados.
-POST /gastos: Registra un nuevo gasto.
-PUT /gastos: Actualiza un gasto existente.
-DELETE /gastos: Elimina un gasto del historial.
+    * GET /roommates: Devuelve todos los roommates almacenados.
+    * POST /roommates: Agrega un nuevo roommate utilizando la API de Random User.
+    * GET /gastos: Devuelve el historial de gastos registrados.
+    * POST /gastos: Registra un nuevo gasto.
+    * PUT /gastos: Actualiza un gasto existente.
+    * DELETE /gastos: Elimina un gasto del historial.
 
 ## Estructura del Proyecto
-bash
+plaintext
 
 /project-root
 ├── /controllers
