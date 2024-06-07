@@ -2,6 +2,7 @@ import fs from 'fs/promises';
 import path from 'path';
 import { v4 as uuidv4 } from 'uuid';
 import { fileURLToPath } from 'url';
+import { sendEmail } from '../services/emailService.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -34,6 +35,9 @@ export const addGasto = async (req, res) => {
 
         await fs.writeFile(gastosPath, JSON.stringify(gastos, null, 2), 'utf8');
         await updateRoommatesBalances(roommate, monto, 'add');
+
+        // Enviar correo de prueba
+        sendEmail(process.env.EMAIL_USER, 'Nuevo Gasto Registrado', `Se ha registrado un nuevo gasto por ${monto} a nombre de ${roommate}`);
 
         res.status(201).json(newGasto);
     } catch (error) {
@@ -84,7 +88,7 @@ export const deleteGasto = async (req, res) => {
             res.status(404).json({ error: 'Gasto not found' });
         }
     } catch (error) {
-        res.status(500).json({ error: 'Error deleting gasto' });
+        res.status500().json({ error: 'Error deleting gasto' });
     }
 };
 
@@ -95,20 +99,24 @@ const updateRoommatesBalances = async (roommate, monto, action) => {
     const roommateIndex = roommates.findIndex(r => r.nombre === roommate);
     if (roommateIndex !== -1) {
         if (action === 'add') {
-            roommates[roommateIndex].debe += monto;
+            roommates[roommateIndex].debe = Math.round(roommates[roommateIndex].debe + monto);
             roommates.forEach((r, index) => {
                 if (index !== roommateIndex) {
-                    r.recibe += monto / (roommates.length - 1);
+                    r.recibe = Math.round(r.recibe + monto / (roommates.length - 1));
                 }
             });
         } else if (action === 'subtract') {
-            roommates[roommateIndex].debe -= monto;
+            roommates[roommateIndex].debe = Math.round(roommates[roommateIndex].debe - monto);
             roommates.forEach((r, index) => {
                 if (index !== roommateIndex) {
-                    r.recibe -= monto / (roommates.length - 1);
+                    r.recibe = Math.round(r.recibe - monto / (roommates.length - 1));
                 }
             });
         }
         await fs.writeFile(roommatesPath, JSON.stringify(roommates, null, 2), 'utf8');
+
+        
+        const emails = roommates.map(r => r.email).join(',');
+        sendEmail(emails, 'Nuevo Gasto Registrado', `Se ha registrado un nuevo gasto por ${monto} a nombre de ${roommate}`);
     }
 };

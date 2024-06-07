@@ -1,20 +1,2 @@
 [
-  {
-    "id": "6aab6c73-22b6-4af6-9f0c-92ae83bcae47",
-    "nombre": "Ángel Vicente",
-    "debe": 15000,
-    "recibe": 22500
-  },
-  {
-    "id": "f61e3af7-89ed-4deb-920c-ff67e4be0317",
-    "nombre": "Niklas Niemi",
-    "debe": 15000,
-    "recibe": 7500
-  },
-  {
-    "id": "305d3eb2-3586-4c2c-a5aa-7cebd9bb6608",
-    "nombre": "Fiona Robertson",
-    "debe": 15000,
-    "recibe": 0
-  }
 ]
