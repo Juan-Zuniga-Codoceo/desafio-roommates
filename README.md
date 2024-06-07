@@ -26,8 +26,7 @@ Este proyecto es una aplicación de gestión de roommates que permite registrar 
 2. Instala las dependencias:
 
 bash
-Copiar código
-npm install
+ npm install
 
 3. Configura las variables de entorno:
 Crea un archivo .env en la raíz del proyecto y añade las siguientes variables:
@@ -42,7 +41,7 @@ Inicia el servidor:
 
 bash
 
-npm start
+ npm start
 
 2. Abre tu navegador y navega a http://localhost:3000 para acceder a la interfaz de usuario.
 
@@ -58,26 +57,26 @@ npm start
 ## Estructura del Proyecto
 plaintext
 
-/project-root
-├── /controllers
-│   └── roommatesController.js
-│   └── gastosController.js
-├── /models
-│   └── roommatesModel.js
-│   └── gastosModel.js
-├── /routes
-│   └── roommatesRoutes.js
-│   └── gastosRoutes.js
-├── /services
-│   └── emailService.js
-├── /views
-│   └── index.html
-├── /data
-│   ├── roommates.json
-│   └── gastos.json
-├── index.js
-├── package.json
-└── .env
+    /project-root
+    ├── /controllers
+    │   └── roommatesController.js
+    │   └── gastosController.js
+    ├── /models
+    │   └── roommatesModel.js
+    │   └── gastosModel.js
+    ├── /routes
+    │   └── roommatesRoutes.js
+    │   └── gastosRoutes.js
+    ├── /services
+    │   └── emailService.js
+    ├── /views
+    │   └── index.html
+    ├── /data
+    │   ├── roommates.json
+    │   └── gastos.json
+    ├── index.js
+    ├── package.json
+    └── .env
 
 ## Créditos
 Este proyecto fue desarrollado como parte de un desafío de programación. Utiliza diversas tecnologías, incluyendo Node.js, Express, y Nodemailer.
