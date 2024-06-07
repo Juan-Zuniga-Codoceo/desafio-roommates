@@ -1,0 +1,20 @@
+[
+  {
+    "id": "64cbd485-dfa6-4b26-837c-94a7e97e1cb2",
+    "roommate": "Ángel Vicente",
+    "descripcion": "Articulos de limpieza",
+    "monto": 15000
+  },
+  {
+    "id": "fd1154b3-0174-4fe7-a315-f2f6fc85bf41",
+    "roommate": "Niklas Niemi",
+    "descripcion": "Articulos de limpieza",
+    "monto": 15000
+  },
+  {
+    "id": "559991ba-40a3-4ee6-bb45-6534e52875dd",
+    "roommate": "Fiona Robertson",
+    "descripcion": "Articulos de limpieza",
+    "monto": 15000
+  }
+]
