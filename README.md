@@ -25,21 +25,19 @@ Este proyecto es una aplicación de gestión de roommates que permite registrar 
 
 2. Instala las dependencias:
 
-bash
+
  npm install
 
 3. Configura las variables de entorno:
 Crea un archivo .env en la raíz del proyecto y añade las siguientes variables:
 
-env
+
 
     * EMAIL_USER=your-email@gmail.com
     * EMAIL_PASS=your-email-password
 
 ## Uso
 Inicia el servidor:
-
-bash
 
  npm start
 
